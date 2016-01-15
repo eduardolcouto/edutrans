@@ -31,10 +31,8 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 Route::group(['prefix'=>'api'], function(){
-	Route::group(['prefix'=>'historico-mensagem'],function(){
-		Route::post('store',['as'=>'api.store','uses'=>'HistoricoMensagensController@store']);
-		Route::get('show/{placa}',['as'=>'api.show','uses'=>'HistoricoMensagensController@show']);
-		//Route::update('update/{historico}',['as'=>'api.update','uses'=>'HistoricoMansagemController@update']);
+	Route::group(['prefix'=>'v1'],function(){
+		Route::resource('historico-mensagem','HistoricoMensagensController');
 	});
 	
 });

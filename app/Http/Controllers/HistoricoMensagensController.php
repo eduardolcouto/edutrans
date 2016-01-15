@@ -27,16 +27,6 @@ class HistoricoMensagensController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -45,7 +35,6 @@ class HistoricoMensagensController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request->all());
     	$this->historicoMensagem->create($request->all());
     }
 
@@ -59,17 +48,6 @@ class HistoricoMensagensController extends Controller
     {
         $h = $this->historicoMensagem->where(['placa'=>$placa])->orderby('created_at')->get();
         return $h;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
